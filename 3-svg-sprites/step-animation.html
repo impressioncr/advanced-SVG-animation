@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Step Animation</title>
+  <style>
+    html {
+      width: 100vw;
+      height: 110vh;
+      background: #bacbe1;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #bacbe1 0%, #98acce 31%, #90b3cc 31%, #98acce 31%, #96b7d7 32%, #6f7584 92%, #60474d 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bacbe1), color-stop(31%, #98acce), color-stop(31%, #90b3cc), color-stop(31%, #98acce), color-stop(32%, #96b7d7), color-stop(92%, #6f7584), color-stop(100%, #60474d));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #bacbe1 0%, #98acce 31%, #90b3cc 31%, #98acce 31%, #96b7d7 32%, #6f7584 92%, #60474d 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #bacbe1 0%, #98acce 31%, #90b3cc 31%, #98acce 31%, #96b7d7 32%, #6f7584 92%, #60474d 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #bacbe1 0%, #98acce 31%, #90b3cc 31%, #98acce 31%, #96b7d7 32%, #6f7584 92%, #60474d 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #bacbe1 0%, #98acce 31%, #90b3cc 31%, #98acce 31%, #96b7d7 32%, #6f7584 92%, #60474d 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bacbe1', endColorstr='#60474d',GradientType=0 );
+      /* IE6-9 */
+    }
+
+    .container {
+      background: url("./bk2.png");
+      width: 100%;
+      background-size: 100% auto;
+      height: 600px;
+      margin-top: -12%;
+      opacity: 1;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    .splash {
+      background: url(./svg-sprite9.svg);
+      width: 300px;
+      height: 150px;
+      opacity: 0.5;
+      position: absolute;
+      left: 50%;
+      margin-left: -180px;
+      top: 55%;
+      animation: splashit 1.8s steps(24) infinite;
+    }
+
+    /* fallback */
+    .no-svg .splash {
+      background: url(./svg-sprite9.png);
+    }
+
+    @keyframes splashit {
+      80%, 100% {
+        background-position: 0 -3848px;
+        opacity: 0;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .container {
+        background: none !important;
+      }
+    }
+    @media screen and (min-height: 600px) {
+      .container {
+        margin-top: -1% !important;
+        height: 700px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <div class='splash'></div>
+</div>
+</body>
+</html>
